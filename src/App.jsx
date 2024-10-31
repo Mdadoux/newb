@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Backroung from './Components/Background/Backroung';
-import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/Hero/Hero';
+import { Backroung, Hero, Navbar } from './Components/Components';
 
 function App() {
 
@@ -22,7 +20,7 @@ function App() {
     }, 3000)
   }, [])
   return (
-    <>
+    <div className='main-body'>
       <Backroung playStatus={playStatus} heroCount={heroCount} />
       <Navbar />
       <Hero
@@ -32,7 +30,7 @@ function App() {
         setHeroCount={setHeroCount}
         heroData={heroDatas[heroCount]}
       />
-    </>
+    </div>
   )
 }
 

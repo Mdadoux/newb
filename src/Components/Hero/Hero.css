@@ -1,0 +1,28 @@
+.hero-section:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: -1;
+}
+
+.dot-nav--item.dot-nav--item__isactive {
+    border: 2px solid #fff;
+    height: 12px;
+    width: 12px;
+    background: transparent;
+}
+
+.dot-nav--item {
+    list-style: none;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    background: #fff;
+    transition: width cubic-bezier(0.215, 0.610, 0.355, 1) .2s, height cubic-bezier(0.075, 0.82, 0.165, 1) .2s, border ease .3s;
+}
