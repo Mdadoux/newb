@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { Backroung, Hero, Navbar } from './Components/Components';
+import { heroDatas } from "./Datas/Constants";
 
 function App() {
 
-  let heroDatas = [
-    { text1: "Petit text en inftro", text2: "Un text pour monterer le style de texte" },
-    { text1: "Petit text en inftro 2 du nom ", text2: "Un text pour monterer le style de texte 2 du nom " },
-    { text1: "Petit text title du nom ", text2: "Un text pour monterer le style de content " },
-  ]
-  const [heroCount, setHeroCount] = useState(1);
+  const [heroCount, setHeroCount] = useState(0);
   const [playStatus, setPlayStatus] = useState(false);
 
   useEffect(() => {
@@ -28,6 +24,7 @@ function App() {
         playStatus={playStatus}
         heroCount={heroCount}
         setHeroCount={setHeroCount}
+        datas={heroDatas}
         heroData={heroDatas[heroCount]}
       />
     </div>

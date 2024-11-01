@@ -8,7 +8,7 @@ const Backroung = ({ playStatus, heroCount }) => {
 
     if (playStatus) {
         return (
-            <video className='background' autoPlay loop muted>
+            <video className='background vid' autoPlay loop muted>
                 <source src={video} type='video/mp4' />
             </video>
         );

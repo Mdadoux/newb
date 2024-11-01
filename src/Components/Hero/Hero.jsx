@@ -8,14 +8,15 @@ const Hero = ({ setPlayStatus, playStatus, heroData, heroCount, setHeroCount }) 
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
     }
+
     return (
         <div className='hero-section p-[15px] md:p-[30px] min-h-[100vh] flex flex-col justify-center relative z-1'>
-            <div className="hero-section--inner flex flex-wrap items-end md:mt-[200px] z-2">
-                <div className="hero-section--text max-w-[550px] md:pl-8">
-                    <h1 className='text-white text-5xl md:text-8xl font-bold uppercase font-m'>{heroData.text1}</h1>
-                    <p className='text-white text-lg fontM py-5 uppercase max-w-[250px]'>{heroData.text2}</p>
+            <div className="hero-section--inner flex flex-col md:flex-row md:flex-wrap md:items-end md:mt-[200px] z-2">
+                <div className="hero-section--text max-w-[650px] md:pl-8">
+                    <h1 className='text-white text-5xl md:text-8xl font-bold uppercase font-m'>{heroData.title}</h1>
+                    <p className='text-white text-lg fontM py-5 uppercase max-w-[300px]'>{heroData.text}</p>
                 </div>
-                <div className="hero-section--nav">
+                <div className="hero-section--nav py-3 md:py-0">
                     <ul className="hero-section--nav__dots dots-nav flex items-center px-2 justify-center gap-[10px]">
                         <li onClick={() => setHeroCount(0)} className={`${heroCount === 0 ? 'dot-nav--item__isactive' : 'dot'} dot-nav--item cursor-pointer flex flex-col justify-center`}></li>
                         <li onClick={() => setHeroCount(1)} className={`${heroCount === 1 ? 'dot-nav--item__isactive' : 'dot'} dot-nav--item cursor-pointer flex flex-col justify-center`}></li>
@@ -23,8 +24,8 @@ const Hero = ({ setPlayStatus, playStatus, heroData, heroCount, setHeroCount }) 
                     </ul>
                 </div>
                 <div className={`hero-section--thumbnail flex flex-col justify-center items-center ml-auto ${!playStatus ? 'min-w-[180px] min-h-[100px]' : 'hide-bg'}`} style={bgUrl}>
-                    <div className="hero-section--play cursor-pointer w-[45px] h-[45px] rounded-full border-white border-2 p-2">
-                        <img onClick={() => setPlayStatus(!playStatus)} src={playStatus ? pauseBtn : playBtn} alt="lecture" width='50' />
+                    <div className="hero-section--play cursor-pointer w-[45px] h-[45px] rounded-full border-white border-2 p-2 flex flex-col justify-center">
+                        <img onClick={() => setPlayStatus(!playStatus)} src={playStatus ? pauseBtn : playBtn} alt="lecture" width='45' className='oject-contain' />
                     </div>
                 </div>
             </div>
